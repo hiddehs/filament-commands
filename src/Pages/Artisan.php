@@ -14,7 +14,7 @@ class Artisan extends Page
 
     protected static ?string $navigationGroup = 'Settings';
 
-    public static function shouldRegisterNavigation(): bool
+    protected static function shouldRegisterNavigation(): bool
     {
         $show = true;
         if (config('artisan-gui.navigation.show-only-commands-showing', false)) {
@@ -26,7 +26,7 @@ class Artisan extends Page
         return $show && static::hasCommands();
     }
 
-    protected static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): ?string
     {
         return strval(__(config('artisan-gui.navigation.group') ?? static::$navigationGroup));
     }

@@ -8,13 +8,13 @@ use io3x1\FilamentCommands\Http\Controllers\GuiController;
 
 class Artisan extends Page
 {
-    protected static ?string $navigationIcon = 'heroicon-o-code';
+    protected static ?string $navigationIcon = 'heroicon-o-code-bracket-square';
 
     protected static string $view = 'gui::index';
 
     protected static ?string $navigationGroup = 'Settings';
 
-    protected static function shouldRegisterNavigation(): bool
+    public static function shouldRegisterNavigation(): bool
     {
         $show = true;
         if (config('artisan-gui.navigation.show-only-commands-showing', false)) {

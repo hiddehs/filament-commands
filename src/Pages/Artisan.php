@@ -14,7 +14,7 @@ class Artisan extends Page
 
     protected static ?string $navigationGroup = 'Settings';
 
-    protected static function shouldRegisterNavigation(): bool
+    public static function shouldRegisterNavigation(): bool
     {
         $show = true;
         if (config('artisan-gui.navigation.show-only-commands-showing', false)) {
